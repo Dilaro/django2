@@ -1,7 +1,7 @@
 {% extends 'blog/base_blog.html' %}
 
 {% block title %}
-    Edit Post "{{ post.title }}"- {{ block.super }}
+    Изменить пост "{{ post.title }}"- {{ block.super }}
 {% endblock %}
 
 
@@ -21,7 +21,7 @@
                 {{ field }}
             </div>
         {% endfor %}
-        <button type="submit" name="button" class="btn btn-primary">Update post</button>
+        <button type="submit" name="button" class="btn btn-primary">Обновить пост</button>
     </form>
 
 

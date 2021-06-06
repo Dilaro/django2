@@ -1,7 +1,7 @@
 {% extends 'blog/base_blog.html' %}
 
 {% block title %}
-    Edit tag "{{ tag.title|title }}" - {{ block.super }}
+    Изменить Тэг "{{ tag.title|title }}" - {{ block.super }}
 {% endblock %}
 
 {% block content %}
@@ -23,7 +23,7 @@
 
         {% endfor %}
 
-        <button type="submit" class="btn btn-primary">Update Tag</button>
+        <button type="submit" class="btn btn-primary">Обновить Тэг</button>
     </form>
 
 

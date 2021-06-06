@@ -54,6 +54,7 @@ class PostDetail(ObjectDetailMixin, View):
     template = 'blog/post_detail.html'
 
 
+
 class PostCreate(LoginRequiredMixin, ObjectCreateMixin, View):
     model_form = PostForm
     template = 'blog/post_create_form.html'
@@ -65,6 +66,8 @@ class PostUpdate(LoginRequiredMixin, ObjectUpdateMixin, View):
     model_form = PostForm
     template = 'blog/post_update_form.html'
     raise_exception = True
+
+
 
 
 class PostDelete(LoginRequiredMixin, ObjectDeleteMixin, View):

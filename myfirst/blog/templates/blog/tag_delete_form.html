@@ -1,7 +1,7 @@
 {% extends 'blog/base_blog.html' %}
 
 {% block title %}
-    Delete Tag "{{ tag.title|title }}" - {{ block.super }}
+    Удалить Тэг "{{ tag.title|title }}" - {{ block.super }}
  {% endblock %}
 
 
@@ -10,9 +10,9 @@
     <form action="{{ tag.get_delete_url }}" method="post">
         {% csrf_token %}
 
-        <h3>Are you sure you want to delete <b>"{{ tag.title|title }}"</b> tag?</h3>
-        <a href="{{ tag.get_absolute_url }}">Cancel</a>
-        <button type="submit" name="button" class="btn btn-danger">Delete</button>
+        <h3>Вы уверены, что хотите удалить  <b>"{{ tag.title|title }}"</b> тэг?</h3>
+        <a href="{{ tag.get_absolute_url }}">Отменить</a>
+        <button type="submit" name="button" class="btn btn-danger">Удалить</button>
 
     </form>
 
