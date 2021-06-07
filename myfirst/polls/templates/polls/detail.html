@@ -22,11 +22,27 @@
 </h1>
 {% if error_message %} <p><strong>{{ error_message }}</strong></p>{% endif %}
 
-<h5 class="px-5" style="color:white">
-    <form class="px-5" action="{% url 'polls:vote' question.id %}" method="post">
+<!-- <h5 class="px-5" style="color:white"> -->
+    <form class="text-center" action="{% url 'polls:vote' question.id %}" method="post">
         {% csrf_token %}
         {% for choice in question.choice_set.all %}
+        <div class="mb-3 fs-2">
+            <input type="radio" name="choice" id="choice{{ forloop.counter }}"value="{{ choice.id }}">
+            <label for="choice{{ forloop.counter }}"> {{ choice.choice_text }}</label>
+        </div>
+        <div class="my-1">
+            <a class="btn btn-primary" onclick="document.location='../../polls/{{ choice.id }}/update_choice'">Обновить вариант ответа</a>
+        </div>
+        <div class="my-1">
+            <a class="btn btn-primary" style="width: auto;" onclick="document.location='../../polls/{{ choice.id }}/delete_choice'">Удалить вариант ответа</a></p>
+        </div>
+        {% endfor %}
 
+        <div class="my-1">
+            <input class="btn btn-success" style="width: auto;" type="submit" value="Проголосвать">
+        </div>
+    </form>
+<!-- 
         <h5 class="list-group-item"><input type="radio" name="choice" id="choice{{ forloop.counter }}"
                 value="{{ choice.id }}">
             <label style="color:white" for="choice{{ forloop.counter }}"> {{ choice.choice_text }}</label> <i class="px-3"></i>
@@ -38,10 +54,10 @@
             <a class="btn btn-primary" style="color:white" onclick="document.location='../../polls/{{ choice.id }}/delete_choice'">Удалить
                 вариант ответа</a></p>
         </h5>
-        {% endfor %}
+       
         <input class="btn btn-primary" type="submit" value="Vote">
 
-    </form>
-</h5>
+    </form> -->
+<!-- </h5> -->
 
 {% endblock %}

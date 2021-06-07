@@ -16,24 +16,28 @@
 {% endblock admin-panel %}
 
 {% block content %}
-<h1>
-    <p align="center" style="color:white" class="p-3">
-        Опросы
-</h1>
+<h1 class="text-center">Опросы</h1>
 
 {% if latest_question_list %}
 
 <ul class="list-group-flush">
     {% for question in latest_question_list %}
-    <p align="center" style="color:white">
+
+    <div class="card mb-4 text-center fw-bold fs-3">
+        <div class="card-title">
+            <a href="{% url 'polls:detail' question.id %}">{{ question.question_text}}</a>
+        </div>
+    </div>
+
+    <!-- <p align="center" style="color:white">
 
         <li class="list-group-item">
             <h3><a style="color:white" href="{% url 'polls:detail' question.id %}">{{ question.question_text}}</a>
         </li>
-        </h3>
+        </h3> -->
         {% endfor %}
 </ul>
 {% else %}
-<p align="center" style="color:white"> Нет доступных опросов</p>
+<p class="text-center" style="color:white"> Нет доступных опросов</p>
 {% endif %}
 {% endblock content %}
