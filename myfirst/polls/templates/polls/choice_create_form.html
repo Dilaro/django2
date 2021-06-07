@@ -3,12 +3,12 @@
 {% block title %}Создание варианта{% endblock %}
 {% block content %}
 
-<h1><p align="center" style="color:#C71585" class="p-3">Создать вариант ответа</h1>
-<h5 class="px-5" style="color:#C71585">
+<h1><p align="center" style="color:white" class="p-3">Создать вариант ответа</h1>
+<h5 class="px-5" style="color:white">
     <form method="post" value="create">
         {{ form.as_p }}
         {% csrf_token %}
-        <input class="btn btn-primary btn-sm btn-dark" type="submit" value="Создать">
+        <input class="btn btn-primary" type="submit" value="Создать">
     </form>
 </h5>
 
